@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Text, View, FlatList, TouchableOpacity, StatusBar, Image, ScrollView, ImageBackground,TextInput,} from 'react-native';
-///import Icon from 'react-native-vector-icons/Ionicons';
+import {createStackNavigator} from '@react-navigation/stack';
 const App = () => {
 
   const [email, setEmail] = useState('')
