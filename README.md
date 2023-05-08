@@ -13,7 +13,7 @@ Exoshop merupakan sebuah aplikasi online shop yang lebih spesifik bertujuan untu
 Adapun batasan Produk dari aplikasi ini yaitu sebagai berikut:
 1. Aplikasi Exoshop merupakan aplikasi mobile seperti e-commerce tapi lebh spesifik kesuatu album.
 2. Aplikasi ini dapat digunakan pada perangkat sistem android dan IOS
-3. Aplikasi ini memiliki setidaknya 5 fitur yaitu sign up, log in, masuk ke album, buy now dan cekout.
+3. Aplikasi ini memiliki setidaknya 5 fitur yaitu sign up, log in, masuk ke album, buy now dan check out.
 4. Aplikasi ini juga hanya menggunakan tahap penjualan dan pembelian produk.
 5. Aplikasi Exoshop ini hanya bisa melakukan transaksi pembayaran album dengan kartu kredit.
 
@@ -26,3 +26,5 @@ Adapun batasan Produk dari aplikasi ini yaitu sebagai berikut:
 
 
 # Link Figma
+Klik http://gg.gg/Link-Figma 
+Link disamping untuk melihat desain dari aplikasi EXOSHOP
