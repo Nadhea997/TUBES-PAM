@@ -11,7 +11,7 @@ function SignIn({navigation}){
         translucent
       />
       <ImageBackground
-        source={require('./src/images/sky.jpg')}
+        source={require('../images/sky.jpg')}
         style={{flex:1}}>
         <View
           style={{

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {Text, View, FlatList, TouchableOpacity, StatusBar, Image, ScrollView, ImageBackground,TextInput,} from 'react-native';
-import { auth } from "../../firebase";
+import { auth } from "../../Firebase";
 import { useNavigation } from "@react-navigation/core";
 
 function Welcome(){
@@ -27,7 +27,7 @@ function Welcome(){
         translucent
       />
       <ImageBackground
-        source={require('../src/images/sky.jpg')}
+        source={require('../images/sky.jpg')}
         style={{flex:1}}>
         <View
           style={{
@@ -42,7 +42,7 @@ function Welcome(){
           </Text>
           <View style={{flex:1, justifyContent: 'center', alignItems:'center', marginTop: 120,}}>
             <Image
-              source={require('./src/images/exologo.png')}
+              source={require('../images/exologo.png')}
               style={{width: 250, height:250,}}
             />
           </View>
