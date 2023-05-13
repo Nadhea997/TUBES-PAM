@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, FlatList, TouchableOpacity, StatusBar, Image, ScrollView, ImageBackground,TextInput,} from 'react-native';
-
+import { COLOURS } from "../database/Database";
+import { useNavigation } from "@react-navigation/core";
 function SignIn({navigation}){
     const [email, setEmail] = useState('')
   return (
@@ -85,4 +86,4 @@ function SignIn({navigation}){
    )
 };
 
-export default App;
+export default SignIn;

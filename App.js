@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {Text, View, FlatList, TouchableOpacity, StatusBar, Image, ScrollView, ImageBackground,TextInput,} from 'react-native';
-import Welcome from "./src/screens/Welcome";
-import SignIn from "./src/screens/SignIn";
+import Welcome from './src/screens/Welcome';
+import SignIn from './src/screens/SignIn';
 //import Login from "./src/screens/Login";
-import {createStackNavigator} from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
+    
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{

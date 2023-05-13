@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {Text, View, FlatList, TouchableOpacity, StatusBar, Image, ScrollView, ImageBackground,TextInput,} from 'react-native';
-import { auth } from "../../Firebase";
 import { useNavigation } from "@react-navigation/core";
+import { auth } from "../../Firebase";
 
 function Welcome(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
   const navigation = useNavigation()
 
   const handleLogIn = () => {
@@ -97,12 +96,11 @@ function Welcome(){
               }}>
             Belum punya akun? Sign In
           </Text>
-          </TouchableOpacity>
-          
-        </View>   
+          </TouchableOpacity>  
+    </View>   
       </ImageBackground>
     </View>
   );
 };
 
-export default App;
+export default Welcome;
