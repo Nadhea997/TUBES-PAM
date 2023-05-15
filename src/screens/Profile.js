@@ -1,7 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-import { COLOURS } from "../database/Database";
 import { useNavigation } from '@react-navigation/core';
 
 export default function Profile() {
@@ -24,7 +22,7 @@ const navigation = useNavigation()
       <TouchableOpacity 
         onPress={() => navigation.goBack()}
         style={styles.RectButtonBack}>
-        <Entypo name="chevron-left" size={24} color= 'COLOURS.backgroundDark' />
+        <Entypo name="chevron-left" size={24} color= 'backgroundDark' />
       </TouchableOpacity>
 
       <Image
@@ -58,13 +56,11 @@ const navigation = useNavigation()
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLOURS.backgroundDark,
     alignItems: 'center',
   },
   RectButtonBack:{
     flexDirection: "row",
     width:"10%",
-    backgroundColor: COLOURS.backgroundLight,
     top:"15%",
     right:"18%",
     height:"5%",
@@ -88,17 +84,17 @@ const styles = StyleSheet.create({
     height: 200,
   },
   title: {
-    color: COLOURS.white,
+    color: '#FFFFFF',
     fontSize: 16,
     top:"11%",
   },
   name: {
-    color: COLOURS.white,
+    color: '#FFFFFF',
     fontSize: 24,
     top:"11%",
   },
   Header:{
-    color: COLOURS.white,
+    color: '#FFFFFF',
     top:"12%",
     fontSize: 25,
     right:"32%"
@@ -110,6 +106,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 19,
-    color: COLOURS.white,
+    color: '#FFFFFF',
   }
 });

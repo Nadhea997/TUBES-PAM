@@ -1,30 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, Image,} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {COLOURS, Items} from '../database/Database';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Entypo from "react-native-vector-icons/Entypo";
-import {city, disctrict, postalcode, region, subregion, street, snumber} from './Locations';
 
 const Cart = ({navigation}) => {
   const [product, setProduct] = useState();
   const [total, setTotal] = useState(null);
 
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      getDataFromDB();
-    });
-
-    return unsubscribe;
-  }, [navigation]);
-
-  //get data from local DB by ID
   const getDataFromDB = async () => {
     let items = await AsyncStorage.getItem('cartItems');
     items = JSON.parse(items);
@@ -44,7 +25,6 @@ const Cart = ({navigation}) => {
     }
   };
 
-  //get total price of all items in the cart
   const getTotal = productData => {
     let total = 0;
     for (let index = 0; index < productData.length; index++) {
@@ -71,8 +51,6 @@ const Cart = ({navigation}) => {
       }
     }
   };
-
-  //checkout
 
   const checkOut = async () => {
     try {
@@ -102,7 +80,7 @@ const Cart = ({navigation}) => {
             padding: 14,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: COLOURS.white,
+            backgroundColor: '#FFFFFF',
             borderRadius: 10,
             marginRight: 22,
           }}>
@@ -126,7 +104,7 @@ const Cart = ({navigation}) => {
               style={{
                 fontSize: 14,
                 maxWidth: '100%',
-                color: COLOURS.white,
+                color: '#FFFFFF',
                 fontWeight: '600',
                 letterSpacing: 1,
               }}>
@@ -145,7 +123,7 @@ const Cart = ({navigation}) => {
                   fontWeight: '400',
                   maxWidth: '85%',
                   marginRight: 4,
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                 }}>
                 Rp. {data.productPrice}
               </Text>
@@ -168,7 +146,7 @@ const Cart = ({navigation}) => {
                   marginRight: 20,
                   padding: 4,
                   borderWidth: 1,
-                  borderColor: COLOURS.white,
+                  borderColor: '#FFFFFF',
                   opacity: 0.5,
                 }}>
                 <TouchableOpacity>
@@ -176,13 +154,13 @@ const Cart = ({navigation}) => {
                     name="minus"
                     style={{
                       fontSize: 16,
-                      color: COLOURS.white,
+                      color: '#FFFFFF',
                     }}
                   />
                 </TouchableOpacity>
               </View>
               <Text style={{
-                    color: COLOURS.white,
+                    color: '#FFFFFF',
                   }}>1</Text>
               <View
                 style={{
@@ -190,7 +168,7 @@ const Cart = ({navigation}) => {
                   marginLeft: 20,
                   padding: 4,
                   borderWidth: 1,
-                  borderColor: COLOURS.white,
+                  borderColor: '#FFFFFF',
                   opacity: 0.5,
                 }}>
                 <TouchableOpacity>
@@ -198,7 +176,7 @@ const Cart = ({navigation}) => {
                     name="plus"
                     style={{
                       fontSize: 16,
-                      color: COLOURS.white,
+                      color: '#FFFFFF',
                     }}
                   />
                 </TouchableOpacity>
@@ -209,8 +187,8 @@ const Cart = ({navigation}) => {
                 name="delete-outline"
                 style={{
                   fontSize: 16,
-                  color: COLOURS.black,
-                  backgroundColor: COLOURS.white,
+                  color: '#000000',
+                  backgroundColor: '#FFFFFF',
                   padding: 8,
                   borderRadius: 100,
                 }}
@@ -227,7 +205,6 @@ const Cart = ({navigation}) => {
       style={{
         width: '100%',
         height: '100%',
-        backgroundColor: COLOURS.backgroundDark,
         position: 'relative',
       }}>
       <ScrollView>
@@ -245,9 +222,8 @@ const Cart = ({navigation}) => {
               name="chevron-left"
               style={{
                 fontSize: 18,
-                color: COLOURS.backgroundDark,
+                color: backgroundDark,
                 padding: 12,
-                backgroundColor: COLOURS.backgroundLight,
                 borderRadius: 12,
               }}
             />
@@ -255,7 +231,7 @@ const Cart = ({navigation}) => {
           <Text
             style={{
               fontSize: 14,
-              color: COLOURS.white,
+              color: '#FFFFFF',
               fontWeight: '400',
             }}>
             Detail Pesanan
@@ -265,7 +241,7 @@ const Cart = ({navigation}) => {
         <Text
           style={{
             fontSize: 20,
-            color: COLOURS.white,
+            color: '#FFFFFF',
             fontWeight: '500',
             letterSpacing: 1,
             paddingTop: 20,
@@ -286,7 +262,7 @@ const Cart = ({navigation}) => {
             <Text
               style={{
                 fontSize: 16,
-                color: COLOURS.white,
+                color: '#FFFFFF',
                 fontWeight: '500',
                 letterSpacing: 1,
                 marginBottom: 20,
@@ -307,8 +283,7 @@ const Cart = ({navigation}) => {
                 }}>
                 <View
                   style={{
-                    color: COLOURS.blue,
-                    backgroundColor: COLOURS.backgroundLight,
+                    color: '#0000FF',
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: 12,
@@ -319,7 +294,7 @@ const Cart = ({navigation}) => {
                     name="truck-delivery-outline"
                     style={{
                       fontSize: 18,
-                      color: COLOURS.blue,
+                      color: '#0000FF',
                     }}
                   />
                 </View>
@@ -327,7 +302,7 @@ const Cart = ({navigation}) => {
                   <Text
                     style={{
                       fontSize: 14,
-                      color: COLOURS.white,
+                      color: '#FFFFFF',
                       fontWeight: '500',
                     }}>
                     Institut Teknologi Sumatera
@@ -335,7 +310,7 @@ const Cart = ({navigation}) => {
                   <Text
                     style={{
                       fontSize: 12,
-                      color: COLOURS.white,
+                      color: '#FFFFFF',
                       fontWeight: '400',
                       lineHeight: 20,
                       opacity: 0.5,
@@ -349,7 +324,7 @@ const Cart = ({navigation}) => {
                 name="chevron-right"
                 style={{
                   fontSize: 22,
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                 }}
               />
             </TouchableOpacity>
@@ -363,7 +338,7 @@ const Cart = ({navigation}) => {
             <Text
               style={{
                 fontSize: 16,
-                color: COLOURS.white,
+                color: '#FFFFFF',
                 fontWeight: '500',
                 letterSpacing: 1,
                 marginBottom: 20,
@@ -384,8 +359,7 @@ const Cart = ({navigation}) => {
                 }}>
                 <View
                   style={{
-                    color: COLOURS.blue,
-                    backgroundColor: COLOURS.backgroundLight,
+                    color: '#0000FF',
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: 12,
@@ -396,7 +370,7 @@ const Cart = ({navigation}) => {
                     style={{
                       fontSize: 10,
                       fontWeight: '900',
-                      color: COLOURS.blue,
+                      color: '#0000FF',
                       letterSpacing: 1,
                     }}>
                     VISA
@@ -406,7 +380,7 @@ const Cart = ({navigation}) => {
                   <Text
                     style={{
                       fontSize: 14,
-                      color: COLOURS.white,
+                      color: '#FFFFFF',
                       fontWeight: '500',
                     }}>
                     Visa Classic
@@ -414,7 +388,7 @@ const Cart = ({navigation}) => {
                   <Text
                     style={{
                       fontSize: 12,
-                      color: COLOURS.white,
+                      color: '#FFFFFF',
                       fontWeight: '400',
                       lineHeight: 20,
                       opacity: 0.5,
@@ -425,7 +399,7 @@ const Cart = ({navigation}) => {
               </View>
               <MaterialCommunityIcons
                 name="chevron-right"
-                style={{fontSize: 22, color: COLOURS.white}}
+                style={{fontSize: 22, color: '#FFFFFF'}}
               />
             </View>
           </View>
@@ -438,7 +412,7 @@ const Cart = ({navigation}) => {
             <Text
               style={{
                 fontSize: 16,
-                color: COLOURS.white,
+                color: '#FFFFFF',
                 fontWeight: '500',
                 letterSpacing: 1,
                 marginBottom: 20,
@@ -457,7 +431,7 @@ const Cart = ({navigation}) => {
                   fontSize: 12,
                   fontWeight: '400',
                   maxWidth: '80%',
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   opacity: 0.5,
                 }}>
                 Subtotal
@@ -466,7 +440,7 @@ const Cart = ({navigation}) => {
                 style={{
                   fontSize: 12,
                   fontWeight: '400',
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   opacity: 0.8,
                 }}>
                 Rp. {total}
@@ -484,7 +458,7 @@ const Cart = ({navigation}) => {
                   fontSize: 12,
                   fontWeight: '400',
                   maxWidth: '80%',
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   opacity: 0.5,
                 }}>
                 Ongkos Kirim
@@ -493,7 +467,7 @@ const Cart = ({navigation}) => {
                 style={{
                   fontSize: 12,
                   fontWeight: '400',
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   opacity: 0.8,
                 }}>
                 Rp. 30.000
@@ -510,7 +484,7 @@ const Cart = ({navigation}) => {
                   fontSize: 12,
                   fontWeight: '400',
                   maxWidth: '80%',
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   opacity: 0.5,
                 }}>
                 Total
@@ -519,7 +493,7 @@ const Cart = ({navigation}) => {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                 }}>
                 Rp. {total + 30000}
               </Text>
@@ -542,7 +516,6 @@ const Cart = ({navigation}) => {
           style={{
             width: '86%',
             height: '90%',
-            backgroundColor: COLOURS.backgroundLight,
             borderRadius: 20,
             justifyContent: 'center',
             alignItems: 'center',
@@ -552,7 +525,7 @@ const Cart = ({navigation}) => {
               fontSize: 12,
               fontWeight: '500',
               letterSpacing: 1,
-              color: COLOURS.black,
+              color: '#000000',
               textTransform: 'uppercase',
             }}>
             CHECKOUT (Rp. {total + 30000} )

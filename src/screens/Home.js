@@ -1,31 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  StatusBar,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-} from "react-native";
-import { COLOURS, Items } from "../database/Database";
-import Entypo from "react-native-vector-icons/Entypo";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { View,Text,StatusBar,ScrollView,TouchableOpacity,Image,} from "react-native";
 
 const Home = ({ navigation }) => {
   const [products, setProducts] = useState([]);
   const [accessory, setAccessory] = useState([]);
-
-  //get called on screen loads
-  useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
-      getDataFromDB();
-    });
-
-    return unsubscribe;
-  }, [navigation]);
-
-  //get data from DB
 
   const getDataFromDB = () => {
     let productList = [];
@@ -41,8 +19,7 @@ const Home = ({ navigation }) => {
     setAccessory(accessoryList);
   };
 
-  //create an product reusable card
-
+ 
   const ProductCard = ({ data }) => {
     return (
       <TouchableOpacity
@@ -59,7 +36,7 @@ const Home = ({ navigation }) => {
             width: "100%",
             height: 100,
             borderRadius: 10,
-            backgroundColor: COLOURS.white,
+            backgroundColor: '#FFFFFF',
             position: "relative",
             justifyContent: "center",
             alignItems: "center",
@@ -72,7 +49,7 @@ const Home = ({ navigation }) => {
                 position: "absolute",
                 width: "20%",
                 height: "24%",
-                backgroundColor: COLOURS.green,
+                backgroundColor: '#808080',
                 top: 0,
                 left: 0,
                 borderTopLeftRadius: 10,
@@ -84,7 +61,7 @@ const Home = ({ navigation }) => {
               <Text
                 style={{
                   fontSize: 12,
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   fontWeight: "bold",
                   letterSpacing: 1,
                 }}
@@ -105,7 +82,7 @@ const Home = ({ navigation }) => {
         <Text
           style={{
             fontSize: 12,
-            color: COLOURS.white,
+            color: '#FFFFFF',
             fontWeight: "600",
             marginBottom: 2,
           }}
@@ -125,13 +102,13 @@ const Home = ({ navigation }) => {
                 style={{
                   fontSize: 12,
                   marginRight: 6,
-                  color: COLOURS.green,
+                  color: '#00FF00',
                 }}
               />
               <Text
                 style={{
                   fontSize: 12,
-                  color: COLOURS.green,
+                  color: '#00FF00',
                 }}
               >
                 Tersedia
@@ -149,13 +126,13 @@ const Home = ({ navigation }) => {
                 style={{
                   fontSize: 12,
                   marginRight: 6,
-                  color: COLOURS.red,
+                  color: '#FF0000',
                 }}
               />
               <Text
                 style={{
                   fontSize: 12,
-                  color: COLOURS.red,
+                  color: '#FF0000',
                 }}
               >
                 Tidak Tersedia
@@ -166,7 +143,7 @@ const Home = ({ navigation }) => {
         <Text
           style={{
             fontSize: 12,
-            color: COLOURS.white,
+            color: '#FFFFFF',
           }}
         >
           Rp. {data.productPrice}
@@ -180,10 +157,9 @@ const Home = ({ navigation }) => {
       style={{
         width: "100%",
         height: "100%",
-        backgroundColor: COLOURS.backgroundDark,
       }}
     >
-      <StatusBar backgroundColor={COLOURS.white} barStyle="dark-content" />
+      <StatusBar backgroundColor={'#FFFFFF'} barStyle="dark-content" />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
@@ -198,10 +174,9 @@ const Home = ({ navigation }) => {
               name="contacts"
               style={{
                 fontSize: 18,
-                color: COLOURS.backgroundlight,
+                color: backgroundlight,
                 padding: 12,
                 borderRadius: 10,
-                backgroundColor: COLOURS.backgroundLight,
               }}
             />
           </TouchableOpacity>
@@ -210,11 +185,10 @@ const Home = ({ navigation }) => {
               name="cart"
               style={{
                 fontSize: 18,
-                color: COLOURS.backgroundMedium,
+                color: backgroundMedium,
                 padding: 12,
                 borderRadius: 10,
                 borderWidth: 1,
-                backgroundColor: COLOURS.backgroundLight,
               }}
             />
           </TouchableOpacity>
@@ -228,7 +202,7 @@ const Home = ({ navigation }) => {
           <Text
             style={{
               fontSize: 26,
-              color: COLOURS.backgroundLight,
+              color: backgroundLight,
               fontWeight: "500",
               letterSpacing: 1,
               marginBottom: 10,
@@ -239,7 +213,7 @@ const Home = ({ navigation }) => {
           <Text
             style={{
               fontSize: 14,
-              color: COLOURS.white,
+              color: '#FFFFFF',
               fontWeight: "400",
               letterSpacing: 1,
               lineHeight: 24,
@@ -269,7 +243,7 @@ const Home = ({ navigation }) => {
               <Text
                 style={{
                   fontSize: 18,
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   fontWeight: "500",
                   letterSpacing: 1,
                 }}
@@ -279,7 +253,7 @@ const Home = ({ navigation }) => {
               <Text
                 style={{
                   fontSize: 14,
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   fontWeight: "400",
                   opacity: 0.5,
                   marginLeft: 10,
@@ -291,7 +265,7 @@ const Home = ({ navigation }) => {
             <Text
               style={{
                 fontSize: 14,
-                color: COLOURS.backgroundLight,
+                color: backgroundLight,
                 fontWeight: "400",
               }}
             >
@@ -332,7 +306,7 @@ const Home = ({ navigation }) => {
               <Text
                 style={{
                   fontSize: 18,
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   fontWeight: "500",
                   letterSpacing: 1,
                 }}
@@ -342,7 +316,7 @@ const Home = ({ navigation }) => {
               <Text
                 style={{
                   fontSize: 14,
-                  color: COLOURS.white,
+                  color: '#FFFFFF',
                   fontWeight: "400",
                   opacity: 0.5,
                   marginLeft: 10,
@@ -354,7 +328,7 @@ const Home = ({ navigation }) => {
             <Text
               style={{
                 fontSize: 14,
-                color: COLOURS.backgroundLight,
+                color: backgroundLight,
                 fontWeight: "400",
               }}
             >

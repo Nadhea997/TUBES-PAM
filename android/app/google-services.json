@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "638844802299",
+    "firebase_url": "https://exoshop-77a50-default-rtdb.firebaseio.com",
+    "project_id": "exoshop-77a50",
+    "storage_bucket": "exoshop-77a50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638844802299:android:7d164f407e2e8e6bb34c5e",
+        "android_client_info": {
+          "package_name": "com.exoshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638844802299-sb6h5kmir4d4rg2qhh6hjbib6d1hlr0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZZzKhB4sXN28G4S4ZPCEG9VkKxNsEcPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638844802299-sb6h5kmir4d4rg2qhh6hjbib6d1hlr0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

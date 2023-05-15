@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from "react";
-import {Text, View, FlatList, TouchableOpacity, StatusBar, Image, ScrollView, ImageBackground,TextInput,} from 'react-native';
+import {Text, View, TouchableOpacity, StatusBar, Image, ImageBackground,TextInput,} from 'react-native';
 import { useNavigation } from "@react-navigation/core";
-import { auth } from "../../Firebase";
 
 function Welcome(){
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigation = useNavigation()
-
-  const handleLogIn = () => {
-    auth
-    .signInWithEmailAndPassword(email, password)
-    .then(userCredentials => {
-      const user = userCredentials.user;
-      console.log('Logged In with:', user.email);
-    })
-    .catch(error => alert(error.message))
-  }
+   
 
   return (
     <View style={{flex: 1}}>
@@ -47,7 +37,7 @@ function Welcome(){
           </View>
 
           <TextInput
-            value={email}  onChangeText={text => setEmail(text)}
+            value={email}  onChangeText={(text) => setEmail(text)}
             style={{
               backgroundColor:'#FFFFFF',
               paddingLeft: 10,
@@ -58,25 +48,24 @@ function Welcome(){
             placeholder="Masukkan Email Anda"
           />
           <TextInput
-            value={password}  onChangeText={text => setPassword(text)}
+            value={password}  onChangeText={(text) => setPassword(text)}
             style={{
               backgroundColor:'#FFFFFF',
               paddingLeft: 10,
               borderRadius:50,
               elevation: 5,
               marginTop:10,
-              secureTextEntry,
               }}
             placeholder="Masukkan Password Anda"
           />
-          <TouchableOpacity   onPress={() => navigation.navigate("Login")}>
+          <TouchableOpacity   onPress={handleLogIn}>
             <Text
             style={{
               color: '#000000', 
               fontWeight: 'bold', 
               fontSize:18,
               backgroundColor:'#D3D3D3',
-              justifyContent: 'center',
+              justifyContent: 'center',    
               alignItems:'center', 
               marginTop:10,
               paddingVertical:10,
